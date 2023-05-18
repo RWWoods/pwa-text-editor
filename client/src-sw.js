@@ -1,13 +1,12 @@
 const { offlineFallback, warmStrategyCache } = require('workbox-recipes');
-const { CacheFirst } = require('workbox-strategies');
+const { CacheFirst, StaleWhileRevalidate } = require('workbox-strategies');
 const { registerRoute } = require('workbox-routing');
 const { CacheableResponsePlugin } = require('workbox-cacheable-response');
 const { ExpirationPlugin } = require('workbox-expiration');
 const { precacheAndRoute } = require('workbox-precaching/precacheAndRoute');
-import {StaleWhileRevalidate} from 'workbox-strategies';
 
-// const {setDefaultHandler} = require('workbox-routing');
-// const {NetworkOnly} = require('workbox-strategies');
+
+
 
 precacheAndRoute(self.__WB_MANIFEST);
 
@@ -23,16 +22,11 @@ const pageCache = new CacheFirst({
   ],
 });
 
-warmStrategyCache, offlineFallback({
+warmStrategyCache({
   urls: ['/index.html', '/'],
   strategy: pageCache,
 });
 
-
-
-// setDefaultHandler(new NetworkOnly());
-
-// offlineFallback();
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
