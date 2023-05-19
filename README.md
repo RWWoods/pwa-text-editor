@@ -10,11 +10,11 @@ you will need node project manager (npm) in order to the dev dependencies. Start
 
 ## Usage
 
-
+You can find the deployed version of this app [here](https://whispering-chamber-67649.herokuapp.com/). You can use the text editor to jot down notes, or snippets of code. You can also try going offline, where the app will still work thanks to the service worker package. 
 
 ## Credits
 
-Credit to my instructor Leif, who helped pin down my many-to-many associations which weren't playing nicely to start.
+I used the starter code provided by PENNLPS coding bootcamp for this project, and the resources provided by our in-class activites. 
 
 ## License
 
